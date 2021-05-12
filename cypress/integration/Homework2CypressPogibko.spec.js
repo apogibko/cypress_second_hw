@@ -19,8 +19,8 @@ it ('Log out', () => {
 
 it ('Log with invalid creds', () => {
     cy.visit('https://the-internet.herokuapp.com/login');
-    cy.get('[name="username"]').type('tomsmith1').should('have.value', 'tomsmith1');
-    cy.get('[type="password"]').type('SuperSecretPassword!1').should('have.value', 'SuperSecretPassword!1');
+    cy.get('#username').type('tomsmith1').should('have.value', 'tomsmith1');
+    cy.get('#password').type('SuperSecretPassword!1').should('have.value', 'SuperSecretPassword!1');
     cy.get('.fa').click();
     cy.get('#flash').should('contain', 'Your username is invalid!');
 });
